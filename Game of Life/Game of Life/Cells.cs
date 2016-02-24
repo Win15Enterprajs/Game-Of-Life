@@ -18,9 +18,10 @@ namespace Game_of_Life
         /// <param name="array"></param>
         /// <param name="neighbours"></param>
         /// <returns></returns>
-        public int[,] ManipulateCells(int[,] tempArray,int[,] array)
+        public int[,] ManipulateCells(int[,] array)
         {
             var board = new Board();
+            var tempArray = new int[array.GetLength(0), array.GetLength(1)];
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
