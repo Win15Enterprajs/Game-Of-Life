@@ -10,16 +10,16 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[25 , 25];
+            int[,] testArray = new int[15 , 15];
             Board test = new Board();
             Cells Game = new Cells();
             test.addRandomValues(testArray);
-            test.printArr(testArray);
+            test.PrintTheArray(testArray);
             do
             {
                 Console.Clear();
                 testArray = Game.ManipulateCells(testArray);
-                test.printArr(testArray);
+                test.PrintTheArray(testArray);
                 Console.ReadKey();
 
             } while (true);
