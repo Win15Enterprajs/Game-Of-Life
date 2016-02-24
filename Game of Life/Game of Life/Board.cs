@@ -35,33 +35,35 @@ namespace Game_of_Life
         }
         public void printArr(int[,] array)
         {
+            char asciisymbol = (char)65;
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < array.GetLength(0); i++)
             {
-                Console.Write("{0}: ", i);
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (array[i, j] == 1)
                     {
                         if (j == array.GetLength(1) - 1)
                         {
-                            Console.Write("*\n");
+                            sb.AppendFormat("{0}\n", asciisymbol);
                         }
                         else
                         {
-                            Console.Write("*");
+                            sb.AppendFormat("{0}", asciisymbol);
                         }
                     }
                     else if (j == array.GetLength(1) - 1)
                     {
-                        Console.Write("{0}\n", j);
+                        sb.AppendFormat(" \n");
                         break;
                     }
                     else if (array[i, j] == 0)
                     {
-                        Console.Write("{0}", j);
+                        sb.AppendFormat(" ");
                     }
                 }
             }
+            Console.WriteLine(sb.ToString());
         }
         /// <summary>
         /// Counts the neighbours which have the value of 1 surrounding the x and y coordinates.

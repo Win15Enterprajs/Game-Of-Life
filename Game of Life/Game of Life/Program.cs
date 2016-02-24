@@ -10,20 +10,21 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[5, 5];
+            int[,] testArray = new int[25, 25];
             Board test = new Board();
             Cells Game = new Cells();
-            //test.addRandomValues(testArray);
-            testArray[0, 0] = 1;
-            testArray[0, 1] = 1;
-            testArray[0, 2] = 1;
-            test.PrintTheArray(testArray);
+            test.addRandomValues(testArray);
+            //testArray[0, 0] = 1;
+            //testArray[0, 1] = 1;
+            //testArray[0, 2] = 1;
+            //test.PrintTheArray(testArray);
             Console.ReadLine();
             do
             {
                 Console.Clear();
                 testArray = Game.ManipulateCells(testArray);
-                test.PrintTheArray(testArray);
+                //test.PrintTheArray(testArray);
+                test.printArr(testArray);
                 Console.ReadKey();
 
             } while (true);
