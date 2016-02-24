@@ -23,24 +23,28 @@ namespace Game_of_Life
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
+                Console.Write("{0}: ", i);
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (array[i, j] == 1)
                     {
                         if (j == array.GetLength(1) - 1)
                         {
-                            Console.Write("*\r\n");
+                            Console.Write("*\n");
                         }
-                        Console.Write("*");
+                        else
+                        {
+                            Console.Write("*");
+                        }
                     }
                     else if (j == array.GetLength(1) - 1)
                     {
-                        Console.Write(" \r\n");
+                        Console.Write("{0}\n", j);
                         break;
                     }
                     else if (array[i, j] == 0)
                     {
-                        Console.Write(" ");
+                        Console.Write("{0}", j);
                     }
                 }
             }
