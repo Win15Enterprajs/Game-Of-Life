@@ -10,9 +10,10 @@ namespace Game_of_Life
     {
         public int[,] addRandomValues(int[,] arrayInput)
         {
+            int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
             int[,] temp = arrayInput;
             Random rnd = new Random();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < amountToAdd; i++)
             {
                 temp[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
             }
@@ -22,7 +23,6 @@ namespace Game_of_Life
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
-                Console.Write(i);
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (array[i, j] == 1)

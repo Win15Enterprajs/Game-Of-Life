@@ -10,13 +10,18 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[5, 5];
+            int[,] testArray = new int[25 , 25];
             Board test = new Board();
+            Cells Game = new Cells();
             test.addRandomValues(testArray);
             test.printArr(testArray);
-            int number = test.CountNeighbour(4 ,4 , testArray);
-            Console.WriteLine(number);
-            Console.ReadKey();
+            do
+            {
+                testArray = Game.ManipulateCells(testArray);
+                test.printArr(testArray);
+                Console.ReadKey();
+
+            } while (true);
             // random comment here smilyface
 
         }
