@@ -45,61 +45,67 @@ namespace Game_of_Life
                 }
             }
         }
-
+        /// <summary>
+        /// Counts the neighbours which have the value of 1 surrounding the x and y coordinates.
+        /// </summary>
+        /// <param name="x">Coordinate of x-axis.</param>
+        /// <param name="y">Coordinate of y-axis.</param>
+        /// <param name="arrayToCheck">2D int Array of which to count from.</param>
+        /// <returns>Number of live neighbours the x and y coordinate has.</returns>
         public int CountNeighbour(uint x, uint y, int[,] arrayToCheck)
         {
             int amountOfNeighbours = 0;
-            if ( x != 0)
+            if ( x != 0)                            /// Makes sure that you cant check below the limit of the X -axis.
             {
                 if (arrayToCheck[x - 1, y] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if ( y != 0)
+            if ( y != 0)                            /// Makes sure that you can't check below the limit of the Y -axis.
             {
                 if (arrayToCheck[x, y - 1] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if (x != arrayToCheck.GetLength(0) - 1)
+            if (x != arrayToCheck.GetLength(0) - 1) /// Makes sure that you can't check above the limit of the X -axis.
             {
                 if (arrayToCheck[x + 1, y] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if (y != arrayToCheck.GetLength(1) - 1)
+            if (y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check above the limit of the Y -axis.
             {
                 if (arrayToCheck[x, y + 1] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if (x != arrayToCheck.GetLength(0) - 1 && y != arrayToCheck.GetLength(1) - 1)
-            {
+            if (x != arrayToCheck.GetLength(0) - 1 && y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check above the limit of the X and Y -axis.
+            {                                                                            ///  Which means the bottom right corner of the matrix.
                 if (arrayToCheck[x + 1, y + 1] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if (x != 0 && y != 0)
-            {
+            if (x != 0 && y != 0)                           /// Makes sure that you can't check below the limit of the Y and X -axis.
+            {                                               /// Which means the upper left corner of the matrix.    
                 if (arrayToCheck[x - 1, y - 1] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if(x != 0 && y != arrayToCheck.GetLength(1) - 1)
-            {
+            if(x != 0 && y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check below the limit of the X -axis or above the limit of the Y -axis.
+            {                                                /// Which means the upper right corner of the matrix.
                 if (arrayToCheck[x - 1, y + 1] == 1)
                 {
                     amountOfNeighbours++;
                 }
             }
-            if(y != 0 && x != arrayToCheck.GetLength(0) - 1)
-            {
+            if(y != 0 && x != arrayToCheck.GetLength(0) - 1) /// Makes sure that you can't check below the limit of the X -axis or above the limit of the Y -axis.
+            {                                                /// Which means the bottom left corner of the matrix.
                 if (arrayToCheck[x + 1, y - 1] == 1)
                 {
                     amountOfNeighbours++;
