@@ -14,6 +14,8 @@ namespace Game_of_Life
             Board test = new Board();
             test.addRandomValues(testArray);
             test.printArr(testArray);
+            int number = test.CountNeighbour(2, 5, testArray);
+            Console.WriteLine(number);
 
         }
     }
