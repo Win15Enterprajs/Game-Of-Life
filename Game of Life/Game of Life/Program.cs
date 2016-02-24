@@ -10,6 +10,11 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
+            int[,] testArray = new int[50, 50];
+            Board test = new Board();
+            test.addRandomValues(testArray);
+            test.printArr(testArray);
+
         }
     }
 }
