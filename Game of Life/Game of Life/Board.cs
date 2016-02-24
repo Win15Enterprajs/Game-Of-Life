@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Game_of_Life
 {
@@ -48,37 +49,55 @@ namespace Game_of_Life
         public int CountNeighbour(uint x, uint y, int[,] arrayToCheck)
         {
             int amountOfNeighbours = 0;
-            if (x - 1 > 0 && y - 1 > 0 && x - 1 > 0 && arrayToCheck[x - 1, y - 1] == 1)
+            if (x != 0 || y != 49)
             {
-                amountOfNeighbours++;
+                if (x - 1 > 0 && y - 1 > 0 && x - 1 > 0 && arrayToCheck[x - 1, y - 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x - 1 > 0 && arrayToCheck[x - 1, y] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x - 1 > 0 && y + 1 < arrayToCheck.GetLength(1) && arrayToCheck[x - 1, y + 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
             }
-            if (x - 1 > 0 && arrayToCheck[x - 1, y] == 1)
+            else
             {
-                amountOfNeighbours++;
-            }
-            if (y + 1 < arrayToCheck.GetLength(1) && x - 1 > 0 && arrayToCheck[x - 1, y + 1] == 1)
-            {
-                amountOfNeighbours++;
-            }
-            if (y - 1 > 0 && arrayToCheck[x , y - 1] == 1)
-            {
-                amountOfNeighbours++;
-            }
-            if (y + 1 < arrayToCheck.GetLength(1) - 1 && arrayToCheck[x , y + 1] == 1)
-            {
-                amountOfNeighbours++;
-            }
-            if (x + 1 < arrayToCheck.GetLength(0) && arrayToCheck[x + 1, y - 1] == 1)
-            {
-                amountOfNeighbours++;
-            }
-            if (x + 1 < arrayToCheck.GetLength(0) && arrayToCheck[x + 1, y] == 1)
-            {
-                amountOfNeighbours++;
-            }
-            if (x - 1 > 0 && y + 1 < arrayToCheck.GetLength(1) && arrayToCheck[x - 1, y + 1] == 1)
-            {
-                amountOfNeighbours++;
+                if (x - 1 > 0 && y - 1 > 0 && x - 1 > 0 && arrayToCheck[x - 1, y - 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x - 1 > 0 && arrayToCheck[x - 1, y] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (y + 1 < arrayToCheck.GetLength(1) && x - 1 > 0 && arrayToCheck[x - 1, y + 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (y - 1 > 0 && arrayToCheck[x, y - 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (y + 1 < arrayToCheck.GetLength(1) - 1 && arrayToCheck[x, y + 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x + 1 < arrayToCheck.GetLength(0) && arrayToCheck[x + 1, y - 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x + 1 < arrayToCheck.GetLength(0) && arrayToCheck[x + 1, y] == 1)
+                {
+                    amountOfNeighbours++;
+                }
+                if (x - 1 > 0 && y + 1 < arrayToCheck.GetLength(1) && arrayToCheck[x - 1, y + 1] == 1)
+                {
+                    amountOfNeighbours++;
+                }
             }
 
             return amountOfNeighbours;

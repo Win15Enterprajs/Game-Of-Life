@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Game_of_Life
 {
@@ -14,9 +15,7 @@ namespace Game_of_Life
             Board test = new Board();
             test.addRandomValues(testArray);
             test.printArr(testArray);
-            int number = test.CountNeighbour(2, 5, testArray);
-            Console.WriteLine(number);
-            // random comment here smilyface
+            Console.WriteLine(test.CountNeighbour(0,49,testArray));
 
         }
     }
