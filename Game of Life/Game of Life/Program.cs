@@ -26,7 +26,7 @@ namespace Game_of_Life
                 testArray = Game.ManipulateCells(testArray);
                 //test.PrintTheArray(testArray);
                 test.printArr(testArray);
-                Console.ReadKey();
+                Console.ReadKey(true);
                 Console.Clear();
 
             } while (true);
