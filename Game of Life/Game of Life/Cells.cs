@@ -9,6 +9,18 @@ namespace Game_of_Life
 {
     class Cells
     {
+        public int[,] MakeTheTempArray(int[,] array)
+        {
+            var tempArray = new int[array.GetLength(0), array.GetLength(1)];
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    tempArray[i, j] = array[i, j];
+                }
+            }
+            return tempArray;
+        }
         /// <summary>
         ///  Manipulates the cells in the matrix according to the rules of the Game of Life
         /// </summary>
@@ -17,7 +29,7 @@ namespace Game_of_Life
         public int[,] ManipulateCells(int[,] array)
         {
             var board = new Board();
-            var tempArray = new int[array.GetLength(0), array.GetLength(1)];
+            var tempArray = MakeTheTempArray(array);
             int temp = 0;
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -34,18 +46,14 @@ namespace Game_of_Life
                         }
                         
                     }
-                    else
+                    else if (temp == 3)
                     {
-                        //if (board.CountNeighbour(i, j, array) == 2 || board.CountNeighbour(i, j, array) == 3)
-                        if (temp == 3)
-                        {
-                            tempArray[i, j] = 1;
-                        }
+                        tempArray[i, j] = 1;
                     }
                 }
             }
-            array = tempArray;
-            return array;
+
+            return tempArray;
         }
         /// <summary>
         /// Offers the user an option to automate the cellupdates according to a pre-set or use decided pace
