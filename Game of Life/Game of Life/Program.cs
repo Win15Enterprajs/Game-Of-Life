@@ -16,6 +16,7 @@ namespace Game_of_Life
             test.printArr(testArray);
             int number = test.CountNeighbour(2, 5, testArray);
             Console.WriteLine(number);
+            // random comment here smilyface
 
         }
     }
