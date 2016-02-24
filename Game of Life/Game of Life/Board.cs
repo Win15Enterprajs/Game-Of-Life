@@ -35,7 +35,7 @@ namespace Game_of_Life
         }
         public void printArr(int[,] array)
         {
-            char asciisymbol = (char)65;
+            char asciisymbol = '█';
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < array.GetLength(0); i++)
             {
