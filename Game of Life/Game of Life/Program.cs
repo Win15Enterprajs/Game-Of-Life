@@ -10,7 +10,7 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[15 , 15];
+            int[,] testArray = new int[10 , 10];
             Board test = new Board();
             Cells Game = new Cells();
             test.addRandomValues(testArray);

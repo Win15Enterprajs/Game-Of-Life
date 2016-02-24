@@ -18,13 +18,17 @@ namespace Game_of_Life
         {
             var board = new Board();
             var tempArray = new int[array.GetLength(0), array.GetLength(1)];
+            int temp = 0;
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
+                    temp = board.CountNeighbour(i, j, array);
+                        
                     if (array[i, j] == 1)
                     {
-                        if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
+                        //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
+                        if (temp < 2 || temp > 3)
                         {
                             tempArray[i, j] = 0;
                         }
@@ -32,7 +36,8 @@ namespace Game_of_Life
                     }
                     else
                     {
-                        if (board.CountNeighbour(i, j, array) == 2 || board.CountNeighbour(i, j, array) == 3)
+                        //if (board.CountNeighbour(i, j, array) == 2 || board.CountNeighbour(i, j, array) == 3)
+                        if (temp == 3)
                         {
                             tempArray[i, j] = 1;
                         }
