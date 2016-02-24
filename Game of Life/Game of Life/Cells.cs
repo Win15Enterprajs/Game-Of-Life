@@ -18,34 +18,26 @@ namespace Game_of_Life
         /// <param name="array"></param>
         /// <param name="neighbours"></param>
         /// <returns></returns>
-        public int[,] ManipulateCells(int x, int y,int[,] tempArray,int[,] array, int neighbours)
+        public int[,] ManipulateCells(int[,] tempArray,int[,] array)
         {
+            var board = new Board();
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[x, y] == 1)
+                    if (array[i, j] == 1)
                     {
-                        if (neighbours == 2 || neighbours == 3)
+                        if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         {
-                            return tempArray;
+                            tempArray[i, j] = 0;
                         }
-                        else
-                        {
-                            tempArray[x, y] = 0;
-                            return tempArray;
-                        }
+                        
                     }
                     else
                     {
-                        if (neighbours == 2 || neighbours == 3)
+                        if (board.CountNeighbour(i, j, array) == 2 || board.CountNeighbour(i, j, array) == 3)
                         {
-                            tempArray[x, y] = 1;
-                            return tempArray;
-                        }
-                        else
-                        {
-                            return tempArray;
+                            tempArray[i, j] = 1;
                         }
                     }
                 }

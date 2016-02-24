@@ -52,7 +52,7 @@ namespace Game_of_Life
         /// <param name="y">Coordinate of y-axis.</param>
         /// <param name="arrayToCheck">2D int Array of which to count from.</param>
         /// <returns>Number of live neighbours the x and y coordinate has.</returns>
-        public int CountNeighbour(uint x, uint y, int[,] arrayToCheck)
+        public int CountNeighbour(int x, int y, int[,] arrayToCheck)
         {
             int amountOfNeighbours = 0;
             if ( x != 0)                            /// Makes sure that you cant check below the limit of the X -axis.
