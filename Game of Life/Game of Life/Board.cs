@@ -8,7 +8,7 @@ namespace Game_of_Life
 {
     class Board
     {
-        public int[,] addValues(int[,] arrayInput)
+        public int[,] addRandomValues(int[,] arrayInput)
         {
             int[,] temp = arrayInput;
             Random rnd = new Random();
@@ -48,7 +48,7 @@ namespace Game_of_Life
         public int CountNeighbour(uint x, uint y, int[,] arrayToCheck)
         {
             int amountOfNeighbours = 0;
-            if (y - 1 > 0 && x - 1 > 0 && arrayToCheck[x - 1, y - 1] == 1)
+            if (x - 1 > 0 && y - 1 > 0 && x - 1 > 0 && arrayToCheck[x - 1, y - 1] == 1)
             {
                 amountOfNeighbours++;
             }
