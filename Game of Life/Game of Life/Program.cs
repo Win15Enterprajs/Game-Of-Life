@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace Game_of_Life
 {
@@ -11,11 +10,14 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[50, 50];
+            int[,] testArray = new int[5, 5];
             Board test = new Board();
             test.addRandomValues(testArray);
             test.printArr(testArray);
-            Console.WriteLine(test.CountNeighbour(0,49,testArray));
+            int number = test.CountNeighbour(0 ,4 , testArray);
+            Console.WriteLine(number);
+            Console.ReadKey();
+            // random comment here smilyface
 
         }
     }
