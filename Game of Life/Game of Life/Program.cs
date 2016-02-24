@@ -10,12 +10,13 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[50, 50];
+            int[,] testArray = new int[5, 5];
             Board test = new Board();
             test.addRandomValues(testArray);
             test.printArr(testArray);
-            int number = test.CountNeighbour(2, 5, testArray);
+            int number = test.CountNeighbour(0 ,4 , testArray);
             Console.WriteLine(number);
+            Console.ReadKey();
             // random comment here smilyface
 
         }
