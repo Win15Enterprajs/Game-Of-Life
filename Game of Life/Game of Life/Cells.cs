@@ -58,37 +58,24 @@ namespace Game_of_Life
         /// <summary>
         /// Offers the user an option to automate the cellupdates according to a pre-set or use decided pace
         /// </summary>
-        public void AutomatedCellUpdate(int[,] array)
+        public int AutomatedCellUpdate()
         {
             var board = new Board();
-            Console.WriteLine("Type in the number of seconds you wish inbetween each cellupdate, or press R for [R]ecommended cellupdate timer");
+            Console.WriteLine("Type in the number of miliseconds you wish inbetween each cellupdate, or press R for [R]ecommended cellupdate timer");
             string userChoice = Console.ReadLine();
-            int userSeconds = 0;
+            int miliseconds = 0;
             if (userChoice.ToLower() == "r")
             {
-                while (true)
-                {
-                    Thread.Sleep(400);
-                    Console.Clear();
-                    array = ManipulateCells(array);
-                    board.printArr(array);
-                    
-                }
+                return 400;
             }
             else
             {
-                while (!int.TryParse(userChoice, out userSeconds))
+                while (!int.TryParse(userChoice, out miliseconds))
                 {
                     Console.WriteLine("You did not enter a correct format, please try again");
                     userChoice = Console.ReadLine();
                 }
-                while (true)
-                {
-                    Thread.Sleep(userSeconds * 1000);
-                    Console.Clear();
-                    array = ManipulateCells(array);
-                    board.printArr(array);
-                }
+                return miliseconds;
             }
             
         }
