@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Game_of_Life
 {
@@ -10,23 +11,23 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            Menue.Intro();
-            Console.ReadLine();
-            int[,] testArray = new int[5, 5];
+            int[,] testArray = new int[25, 50];
             Board test = new Board();
             Cells Game = new Cells();
-            //test.addRandomValues(testArray);
-            testArray[0, 0] = 1;
-            testArray[0, 1] = 1;
-            testArray[0, 2] = 1;
-            test.PrintTheArray(testArray);
-            Console.ReadLine();
+            test.addRandomValues(testArray);
+            //testArray[0, 0] = 1;
+            //testArray[0, 1] = 1;
+            //testArray[0, 2] = 1;
+            //test.PrintTheArray(testArray);
+            Console.WriteLine("Press any key to start game of life...");
+            Console.ReadKey(true);
             do
             {
-                Console.Clear();
                 testArray = Game.ManipulateCells(testArray);
-                test.PrintTheArray(testArray);
-                Console.ReadKey();
+                //test.PrintTheArray(testArray);
+                test.printArr(testArray);
+                Console.ReadKey(true);
+                Console.Clear();
 
             } while (true);
             // random comment here smilyface
