@@ -45,7 +45,7 @@ namespace Game_of_Life
         public void RefreshMenue()
         {
             var cell = new Cells();
-            cell.AutomatedCellUpdate()
+            cell.AutomatedCellUpdate();
                     }
         public void BoardMenue()
         {
