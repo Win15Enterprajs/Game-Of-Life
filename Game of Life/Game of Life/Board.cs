@@ -123,7 +123,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAboutToDie);
                         }
                     }
-                    else if (j == 0 && j == array.GetLength(1) - 1) // 0 Dead
+                    else if (array[i, j] == 0 && j == array.GetLength(1) - 1) // 0 Dead
                     {
                         sb.AppendFormat("{0}\n", asciiDead);
                         break;
