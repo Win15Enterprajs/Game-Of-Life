@@ -10,6 +10,8 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
+            Menue.Intro();
+            Console.ReadLine();
             int[,] testArray = new int[5, 5];
             Board test = new Board();
             Cells Game = new Cells();
