@@ -46,7 +46,7 @@ namespace Game_of_Life
         {
             var cell = new Cells();
             cell.AutomatedCellUpdate();
-                    }
+        }
         public void BoardMenue()
         {
             Console.WriteLine("To select from any of the pre-existing boards, press E for [E]xisting");
