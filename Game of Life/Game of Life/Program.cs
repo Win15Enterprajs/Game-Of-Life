@@ -11,7 +11,7 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            int[,] testArray = new int[25, 50];
+            int[,] testArray = new int[20, 75];
             Board test = new Board();
             Cells Game = new Cells();
             test.addRandomValues(testArray);
@@ -19,15 +19,17 @@ namespace Game_of_Life
             //testArray[0, 1] = 1;
             //testArray[0, 2] = 1;
             //test.PrintTheArray(testArray);
+            Console.WriteLine("This is the seed.");
+            test.printArr(testArray);
             Console.WriteLine("Press any key to start game of life...");
             Console.ReadKey(true);
             do
             {
+                Console.Clear();
                 testArray = Game.ManipulateCells(testArray);
                 //test.PrintTheArray(testArray);
                 test.printArr(testArray);
                 Console.ReadKey(true);
-                Console.Clear();
 
             } while (true);
             // random comment here smilyface
