@@ -19,6 +19,7 @@ namespace Game_of_Life
             //testArray[0, 1] = 1;
             //testArray[0, 2] = 1;
             //test.PrintTheArray(testArray);
+            Menue.Intro();
             Console.WriteLine("This is the seed.");
             test.printArr(testArray);
             Console.WriteLine("Press any key to start game of life...");

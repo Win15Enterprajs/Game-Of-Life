@@ -88,6 +88,7 @@ namespace Game_of_Life
                 {
                     if (array[i, j] == 1)
                     {
+
                         if (j == array.GetLength(1) - 1)
                         {
                             sb.AppendFormat("{0}\n", asciisymbol);
@@ -113,13 +114,13 @@ namespace Game_of_Life
         public int[,] addRandomValues(int[,] arrayInput)
         {
             int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
-            int[,] temp = arrayInput;
+            int[,] tempArray = arrayInput;
             Random rnd = new Random();
             for (int i = 0; i < amountToAdd; i++)
             {
-                temp[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
+                tempArray[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
             }
-            return temp;
+            return tempArray;
         }
         public void PrintTheArray(int[,] array)
         {

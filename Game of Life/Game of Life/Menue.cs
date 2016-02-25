@@ -27,6 +27,8 @@ namespace Game_of_Life
             Console.WriteLine("                 O    O   FFF      L       I    FFF    EEE                                     ");
             Console.WriteLine("                  O  O    F        L       I    F      E                                       ");
             Console.WriteLine("                   O      F        LLLLL   I    F      EEEEE                                   ");
+            Console.ReadKey();
+            Console.Clear();
 
         }
         public void MainMenue()
