@@ -23,6 +23,7 @@ namespace Game_of_Life
             //testArray[0, 1] = 1;
             //testArray[0, 2] = 1;
             //test.PrintTheArray(testArray);
+            Menue.Intro();
             Console.WriteLine("This is the seed.");
             test.printArr(testArray);
             Console.WriteLine("Press any key to start game of life...");
@@ -33,7 +34,7 @@ namespace Game_of_Life
                 testArray = Game.ManipulateCells(testArray);
                 //test.PrintTheArray(testArray);
                 test.printArr(testArray);
-                Console.ReadKey(true);
+                Thread.Sleep(150);
 
             } while (true);
             // random comment here smilyface

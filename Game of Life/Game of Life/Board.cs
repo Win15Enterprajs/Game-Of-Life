@@ -80,31 +80,57 @@ namespace Game_of_Life
         }
         public void printArr(int[,] array)
         {
-            char asciisymbol = '█';
+            char asciiAlive = '█';
+            char asciiDead = ' ';
+            char asciiAboutToDie = '░';
+            char asciiAboutToBeReborn = '▒';
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i, j] == 1)
+                    if (array[i, j] == 1) // 3 Alive
                     {
+
                         if (j == array.GetLength(1) - 1)
                         {
-                            sb.AppendFormat("{0}\n", asciisymbol);
+                            sb.AppendFormat("{0}\n", asciiAlive);
                         }
                         else
                         {
-                            sb.AppendFormat("{0}", asciisymbol);
+                            sb.AppendFormat("{0}", asciiAlive);
                         }
                     }
-                    else if (j == array.GetLength(1) - 1)
+                    else if (array[i, j] == 2) // 2 About to be reborn.
                     {
-                        sb.AppendFormat(" \n");
+                        if (j == array.GetLength(1) - 1)
+                        {
+                            sb.AppendFormat("{0}\n", asciiAboutToBeReborn);
+                        }
+                        else
+                        {
+                            sb.AppendFormat("{0}", asciiAboutToBeReborn);
+                        }
+                    }
+                    else if (array[i, j] == 2) // 1 About to die.
+                    {
+                        if (j == array.GetLength(1) - 1)
+                        {
+                            sb.AppendFormat("{0}\n", asciiAboutToDie);
+                        }
+                        else
+                        {
+                            sb.AppendFormat("{0}", asciiAboutToDie);
+                        }
+                    }
+                    else if (array[i, j] == 0 && j == array.GetLength(1) - 1) // 0 Dead
+                    {
+                        sb.AppendFormat("{0}\n", asciiDead);
                         break;
                     }
                     else if (array[i, j] == 0)
                     {
-                        sb.AppendFormat(" ");
+                        sb.AppendFormat("{0}", asciiDead);
                     }
                 }
             }
@@ -113,15 +139,15 @@ namespace Game_of_Life
         public int[,] addRandomValues(int[,] arrayInput)
         {
             int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
-            int[,] temp = arrayInput;
+            int[,] tempArray = arrayInput;
             Random rnd = new Random();
             for (int i = 0; i < amountToAdd; i++)
             {
-                temp[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
+                tempArray[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
             }
-            return temp;
+            return tempArray;
         }
-        public void PrintTheArray(int[,] array)
+        public void PrintTheArray(int[,] array) //For visual testing purposes.
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {

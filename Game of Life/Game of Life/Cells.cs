@@ -9,6 +9,13 @@ namespace Game_of_Life
 {
     class Cells
     {
+        public enum CellState
+        {
+            Dead,
+            aboutToDie,
+            aboutToBeReborn,
+            Alive
+        }
         public int[,] MakeTheTempArray(int[,] array)
         {
             var tempArray = new int[array.GetLength(0), array.GetLength(1)];
@@ -30,25 +37,26 @@ namespace Game_of_Life
         {
             var board = new Board();
             var tempArray = MakeTheTempArray(array);
-            int temp = 0;
+            int numberOfNeighbours = 0;
+
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    temp = board.CountNeighbour(i, j, array);
+                    numberOfNeighbours = board.CountNeighbour(i, j, array);
                         
                     if (array[i, j] == 1)
                     {
                         //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
-                        if (temp < 2 || temp > 3)
+                        if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
                         {
-                            tempArray[i, j] = 0;
+                            tempArray[i, j] = 0; //=(int)CellState.aboutToDie;
                         }
                         
                     }
-                    else if (temp == 3)
+                    else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 1;
+                        tempArray[i, j] = 1; //=(int)CellState.aboutToBeReborn;
                     }
                 }
             }
