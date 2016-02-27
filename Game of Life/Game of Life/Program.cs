@@ -11,6 +11,10 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("He");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("j");
             int[,] testArray = new int[20, 75];
             Board test = new Board();
             Cells Game = new Cells();
