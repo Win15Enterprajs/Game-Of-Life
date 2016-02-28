@@ -52,11 +52,15 @@ namespace Game_of_Life
                         {
                             tempArray[i, j] = 0; //=(int)CellState.aboutToDie;
                         }
+                        else
+                        {
+                            tempArray[i, j] = 2;
+                        }
                         
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 1; //=(int)CellState.aboutToBeReborn;
+                        tempArray[i, j] = 3; //=(int)CellState.aboutToBeReborn;
                     }
                 }
             }
