@@ -11,22 +11,22 @@ namespace Game_of_Life
     {
         public static void Intro()
         {
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("     TTTTTT  H   H  EEEEE        GGG      A          M       M       EEEEE                     ");
-            Console.WriteLine("       TT    H   H  E          G         A A        M M     M M      E                         ");
-            Console.WriteLine("       TT    HHHHH  EEE        G  GG    AAAAA      M   M   M   M     EEE                       ");
-            Console.WriteLine("       TT    H   H  E          G   G   A     A    M     M M     M    E                         ");
-            Console.WriteLine("       TT    H   H  EEEEE       GGGG  A       A  M       M       M   EEEEE                     ");
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("                                                                                               ");
-            Console.WriteLine("                   O      FFFFF    L       I   ´FFFFF  EEEEE                                   ");
-            Console.WriteLine("                  O  O    F        L       I    F      E                                       ");
-            Console.WriteLine("                 O    O   FFF      L       I    FFF    EEE                                     ");
-            Console.WriteLine("                  O  O    F        L       I    F      E                                       ");
-            Console.WriteLine("                   O      F        LLLLL   I    F      EEEEE                                   ");
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("     TTTTTT  H   H  EEEEE        GGG      A          M       M       EEEEE                     ".TrimEnd());
+            Console.WriteLine("       TT    H   H  E          G         A A        M M     M M      E                         ".TrimEnd());
+            Console.WriteLine("       TT    HHHHH  EEE        G  GG    AAAAA      M   M   M   M     EEE                       ".TrimEnd());
+            Console.WriteLine("       TT    H   H  E          G   G   A     A    M     M M     M    E                         ".TrimEnd());
+            Console.WriteLine("       TT    H   H  EEEEE       GGGG  A       A  M       M       M   EEEEE                     ".TrimEnd());
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("                                                                                               ".TrimEnd());
+            Console.WriteLine("                   O      FFFFF    L       I   ´FFFFF  EEEEE                                   ".TrimEnd());
+            Console.WriteLine("                  O  O    F        L       I    F      E                                       ".TrimEnd());
+            Console.WriteLine("                 O    O   FFF      L       I    FFF    EEE                                     ".TrimEnd());
+            Console.WriteLine("                  O  O    F        L       I    F      E                                       ".TrimEnd());
+            Console.WriteLine("                   O      F        LLLLL   I    F      EEEEE                                   ".TrimEnd());
             Console.ReadKey();
             Console.Clear();
 

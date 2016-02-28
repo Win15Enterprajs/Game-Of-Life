@@ -11,9 +11,11 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             int[,] testArray = new int[20, 75];
             Board test = new Board();
             Cells Game = new Cells();
+            
             test.addRandomValues(testArray);
             //testArray[0, 0] = 1;
             //testArray[0, 1] = 1;
