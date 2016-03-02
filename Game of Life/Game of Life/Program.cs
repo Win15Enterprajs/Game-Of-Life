@@ -32,7 +32,7 @@ namespace Game_of_Life
                 testArray = Game.ManipulateCells(testArray);
                 //test.PrintTheArray(testArray);
                 test.printArr(testArray);
-                Thread.Sleep(150);
+                Console.ReadLine();
 
             } while (true);
             // random comment here smilyface
