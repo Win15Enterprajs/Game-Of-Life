@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Game_of_Life
+namespace GameOfLifeWF
 {
     class Cells
     {

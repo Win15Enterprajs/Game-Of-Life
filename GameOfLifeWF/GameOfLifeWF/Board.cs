@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game_of_Life
+namespace GameOfLifeWF
 {
     class Board
     {
