@@ -89,7 +89,7 @@ namespace Game_of_Life
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i, j] == 1) // 3 Alive
+                    if (array[i, j] == (int)Cells.CellState.Alive) // 3 Alive
                     {
 
                         if (j == array.GetLength(1) - 1)
@@ -101,7 +101,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAlive);
                         }
                     }
-                    else if (array[i, j] == 2) // 2 About to be reborn.
+                    else if (array[i, j] == (int)Cells.CellState.aboutToBeReborn) // 2 About to be reborn.
                     {
                         if (j == array.GetLength(1) - 1)
                         {
@@ -112,7 +112,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAboutToBeReborn);
                         }
                     }
-                    else if (array[i, j] == 2) // 1 About to die.
+                    else if (array[i, j] == (int)Cells.CellState.aboutToDie) // 1 About to die.
                     {
                         if (j == array.GetLength(1) - 1)
                         {

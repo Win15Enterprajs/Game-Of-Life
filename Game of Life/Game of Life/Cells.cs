@@ -57,14 +57,14 @@ namespace Game_of_Life
                         //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
                         {
-                            tempArray[i, j] = 2; //=(int)CellState.aboutToDie;
+                            tempArray[i, j] = 0; //=(int)CellState.aboutToDie;
                         }
 
                         
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 3; //=(int)CellState.aboutToBeReborn;
+                        tempArray[i, j] = 1; //=(int)CellState.aboutToBeReborn;
                     }
                 }
             }
