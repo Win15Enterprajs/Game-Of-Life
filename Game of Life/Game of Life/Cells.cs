@@ -12,9 +12,9 @@ namespace Game_of_Life
         public enum CellState
         {
             Dead,
+            Alive,
             aboutToDie,
-            aboutToBeReborn,
-            Alive
+            aboutToBeReborn
         }
         public int[,] MakeTheTempArray(int[,] array)
         {
@@ -44,8 +44,15 @@ namespace Game_of_Life
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     numberOfNeighbours = board.CountNeighbour(i, j, array);
-                        
-                    if (array[i, j] == 1)
+                    if (array[i,j] == 2)
+                    {
+                        array[i, j] = 0;
+                    }   
+                    else if (array[i,j] == 3)
+                    {
+                        array[i, j] = 1;
+                    } 
+                    else if (array[i, j] == 1)
                     {
                         //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
