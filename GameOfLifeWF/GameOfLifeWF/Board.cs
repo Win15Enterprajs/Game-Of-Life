@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game_of_Life
+namespace GameOfLifeWF
 {
     class Board
     {
@@ -78,7 +78,7 @@ namespace Game_of_Life
 
             return amountOfNeighbours;
         }
-        public void printArr(int[,] array)
+        public string printArr(int[,] array)
         {
             char asciiAlive = '█';
             char asciiDead = ' ';
@@ -134,7 +134,7 @@ namespace Game_of_Life
                     }
                 }
             }
-            Console.WriteLine(sb.ToString());
+            return sb.ToString();
         }
         public int[,] addRandomValues(int[,] arrayInput)
         {
