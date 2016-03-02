@@ -20,6 +20,9 @@ namespace GameOfLifeWF
             Cells cells = new Cells();
             int[,] gameBoard = new int[15, 65];
             board.addRandomValues(gameBoard);
+
+            
+
             Application.Run(new Form1());
         }
     }
