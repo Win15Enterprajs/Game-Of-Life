@@ -14,7 +14,6 @@ namespace GameOfLifeWF
     {
         Board nisse = new Board();
         int[,] testArray = new int[20, 75];
-        string nisse2 = nisse.printArr(testArray);
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +21,8 @@ namespace GameOfLifeWF
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.
+            string nisse2 = nisse.printArr(testArray);
+            textBox2.Text = nisse2;
         }
     }
 }
