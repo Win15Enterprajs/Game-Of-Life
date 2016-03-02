@@ -21,6 +21,7 @@ namespace GameOfLifeWF
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            nisse.addRandomValues(testArray);
             string nisse2 = nisse.printArr(testArray);
             textBox2.Text = nisse2;
         }
