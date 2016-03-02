@@ -20,56 +20,56 @@ namespace Game_of_Life
             int amountOfNeighbours = 0;
             if (x != 0)                            /// Makes sure that you cant check below the limit of the X -axis.
             {
-                if (arrayToCheck[x - 1, y] == 1)
+                if (arrayToCheck[x - 1, y] == (int)Cells.CellState.Alive || arrayToCheck[x - 1, y] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (y != 0)                            /// Makes sure that you can't check below the limit of the Y -axis.
             {
-                if (arrayToCheck[x, y - 1] == 1)
+                if (arrayToCheck[x, y - 1] == (int)Cells.CellState.Alive || arrayToCheck[x, y - 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (x != arrayToCheck.GetLength(0) - 1) /// Makes sure that you can't check above the limit of the X -axis.
             {
-                if (arrayToCheck[x + 1, y] == 1)
+                if (arrayToCheck[x + 1, y] == (int)Cells.CellState.Alive || arrayToCheck[x + 1, y] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check above the limit of the Y -axis.
             {
-                if (arrayToCheck[x, y + 1] == 1)
+                if (arrayToCheck[x, y + 1] == (int)Cells.CellState.Alive || arrayToCheck[x, y + 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (x != arrayToCheck.GetLength(0) - 1 && y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check above the limit of the X and Y -axis.
             {                                                                            ///  Which means the bottom right corner of the matrix.
-                if (arrayToCheck[x + 1, y + 1] == 1)
+                if (arrayToCheck[x + 1, y + 1] == (int)Cells.CellState.Alive || arrayToCheck[x + 1, y + 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (x != 0 && y != 0)                           /// Makes sure that you can't check below the limit of the Y and X -axis.
             {                                               /// Which means the upper left corner of the matrix.    
-                if (arrayToCheck[x - 1, y - 1] == 1)
+                if (arrayToCheck[x - 1, y - 1] == (int)Cells.CellState.Alive || arrayToCheck[x - 1, y - 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (x != 0 && y != arrayToCheck.GetLength(1) - 1) /// Makes sure that you can't check below the limit of the X -axis or above the limit of the Y -axis.
             {                                                /// Which means the upper right corner of the matrix.
-                if (arrayToCheck[x - 1, y + 1] == 1)
+                if (arrayToCheck[x - 1, y + 1] == (int)Cells.CellState.Alive || arrayToCheck[x - 1, y + 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
             }
             if (y != 0 && x != arrayToCheck.GetLength(0) - 1) /// Makes sure that you can't check below the limit of the X -axis or above the limit of the Y -axis.
             {                                                /// Which means the bottom left corner of the matrix.
-                if (arrayToCheck[x + 1, y - 1] == 1)
+                if (arrayToCheck[x + 1, y - 1] == (int)Cells.CellState.Alive || arrayToCheck[x + 1, y - 1] == (int)Cells.CellState.aboutToBeReborn)
                 {
                     amountOfNeighbours++;
                 }
