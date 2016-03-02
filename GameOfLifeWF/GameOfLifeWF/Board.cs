@@ -78,7 +78,7 @@ namespace GameOfLifeWF
 
             return amountOfNeighbours;
         }
-        public void printArr(int[,] array)
+        public string printArr(int[,] array)
         {
             char asciiAlive = '█';
             char asciiDead = ' ';
@@ -134,7 +134,7 @@ namespace GameOfLifeWF
                     }
                 }
             }
-            Console.WriteLine(sb.ToString());
+            return sb.ToString();
         }
         public int[,] addRandomValues(int[,] arrayInput)
         {
