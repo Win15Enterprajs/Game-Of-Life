@@ -44,27 +44,27 @@ namespace Game_of_Life
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     numberOfNeighbours = board.CountNeighbour(i, j, array);
-                    if (array[i,j] == 2)
+                    if (array[i,j] == (int)CellState.aboutToDie)
                     {
-                        array[i, j] = 0;
+                        tempArray[i, j] = 0;
                     }   
-                    else if (array[i,j] == 3)
+                    else if (array[i,j] == (int)CellState.aboutToBeReborn)
                     {
-                        array[i, j] = 1;
+                        tempArray[i, j] = 1;
                     } 
                     else if (array[i, j] == 1)
                     {
                         //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
                         {
-                            tempArray[i, j] = 0; //=(int)CellState.aboutToDie;
+                            tempArray[i, j] = 2; //=(int)CellState.aboutToDie;
                         }
 
                         
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 1; //=(int)CellState.aboutToBeReborn;
+                        tempArray[i, j] = 3; //=(int)CellState.aboutToBeReborn;
                     }
                 }
             }
