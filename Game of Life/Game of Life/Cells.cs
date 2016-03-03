@@ -16,6 +16,12 @@ namespace Game_of_Life
             aboutToDie,
             aboutToBeReborn
         }
+
+        /// <summary>
+        /// Copies the values from an array.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
         public int[,] MakeTheTempArray(int[,] array)
         {
             var tempArray = new int[array.GetLength(0), array.GetLength(1)];
@@ -46,25 +52,24 @@ namespace Game_of_Life
                     numberOfNeighbours = board.CountNeighbour(i, j, array);
                     if (array[i,j] == (int)CellState.aboutToDie)
                     {
-                        tempArray[i, j] = 0;
+                        tempArray[i, j] = (int)CellState.Dead;
                     }   
                     else if (array[i,j] == (int)CellState.aboutToBeReborn)
                     {
-                        tempArray[i, j] = 1;
+                        tempArray[i, j] = (int)CellState.Alive;
                     } 
                     else if (array[i, j] == 1)
                     {
-                        //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
                         {
-                            tempArray[i, j] = 2; //=(int)CellState.aboutToDie;
+                            tempArray[i, j] = (int)CellState.aboutToDie; 
                         }
 
                         
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 3; //=(int)CellState.aboutToBeReborn;
+                        tempArray[i, j] = (int)CellState.aboutToBeReborn;
                     }
                 }
             }

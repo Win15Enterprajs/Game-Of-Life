@@ -12,30 +12,27 @@ namespace Game_of_Life
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
-            int[,] testArray = new int[20, 75];
-            Board test = new Board();
+            Console.SetWindowSize(76, 27);
+            Console.SetBufferSize(76, 27);
+
+            Board gameBoard = new Board(25,75);
             Cells Game = new Cells();
             
-            test.addRandomValues(testArray);
-            //testArray[0, 0] = 1;
-            //testArray[0, 1] = 1;
-            //testArray[0, 2] = 1;
-            //test.PrintTheArray(testArray);
+            gameBoard.addRandomValues(gameBoard.GameBoard);
+            
             Menue.Intro();
-            Console.WriteLine("This is the seed.");
-            test.printArr(testArray);
-            Console.WriteLine("Press any key to start game of life...");
+            gameBoard.printGameBoard(gameBoard.GameBoard);
+            Console.WriteLine("\r\nThis is the seed. Press any key to start game of life...");
             Console.ReadKey(true);
+
             do
             {
                 Console.Clear();
-                testArray = Game.ManipulateCells(testArray);
-                //test.PrintTheArray(testArray);
-                test.printArr(testArray);
+                gameBoard.GameBoard = Game.ManipulateCells(gameBoard.GameBoard);
+                gameBoard.printGameBoard(gameBoard.GameBoard); 
                 Console.ReadLine();
 
             } while (true);
-            // random comment here smilyface
 
         }
     }
