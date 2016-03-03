@@ -14,6 +14,7 @@ namespace Game_of_Life
             Console.CursorVisible = false;
             Console.SetWindowSize(76, 27);
             Console.SetBufferSize(76, 27);
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
             Board gameBoard = new Board(25,75); // Creates a gameboard with the dimensions x = 25 y = 75.
             Cells Game = new Cells(); // Makes an instances of the cell class which manipulates the individual cells on the gameboard.
