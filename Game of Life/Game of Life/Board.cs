@@ -8,6 +8,9 @@ namespace Game_of_Life
 {
     class Board
     {
+        /// <summary>
+        /// A class that handles the gameboard.
+        /// </summary>
         public int[,] GameBoard { get; set; }
         
         /// <summary>
