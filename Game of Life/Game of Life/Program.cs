@@ -18,7 +18,7 @@ namespace Game_of_Life
             Board gameBoard = new Board(25,75); // Creates a gameboard with the dimensions x = 25 y = 75.
             Cells Game = new Cells(); // Makes an instances of the cell class which manipulates the individual cells on the gameboard.
             
-            gameBoard.addRandomValues(gameBoard.GameBoard); // Adds random live and dead cells to the gameBoard
+            Game.addRandomValuesTo(gameBoard); // Adds random live and dead cells to the gameBoard
             
             Menue.Intro(); // Prints a title screen.
             gameBoard.printGameBoard(gameBoard.GameBoard); // Prints the gameBoard in the console.

@@ -71,7 +71,7 @@ namespace Game_of_Life
 
             return tempArray;
         }
-        public int[,] addRandomValues(Board gameBoard)
+        public int[,] addRandomValuesTo(Board gameBoard)
         {
 
             int amountToAdd = (gameBoard.GameBoard.GetLength(0) * gameBoard.GameBoard.GetLength(1)) / 4;
