@@ -98,8 +98,8 @@ namespace Game_of_Life
         /// <param name="array">2D int array gameboard</param>
         public void printGameBoard(int[,] array)
         {
-            char asciiAlive = '█';
             char asciiDead = ' ';
+            char asciiAlive = '█';
             char asciiAboutToDie = '░';
             char asciiAboutToBeReborn = '▒';
             StringBuilder sb = new StringBuilder();
@@ -154,23 +154,7 @@ namespace Game_of_Life
             }
             Console.WriteLine(sb.ToString());
         }
-        /// <summary>
-        /// Adds the int 1 to random x,y positions in a 2D int array.
-        /// </summary>
-        /// <param name="arrayInput">The array you want to fill with random values.</param>
-        /// <returns></returns>
-        public int[,] addRandomValues(int[,] arrayInput)
-        {
-            
-            int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
-            int[,] tempArray = arrayInput;
-            Random rnd = new Random();
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                tempArray[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
-            }
-            return tempArray;
-        }
+       
         public void PrintTheArray(int[,] array) //For visual testing purposes.
         {
             for (int i = 0; i < array.GetLength(0); i++)
