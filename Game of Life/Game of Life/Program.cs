@@ -12,8 +12,8 @@ namespace Game_of_Life
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
-            Console.SetWindowSize(76, 27);
-            Console.SetBufferSize(76, 27);
+            Console.SetWindowSize(76, 28);
+            Console.SetBufferSize(76, 28);
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
             Board gameBoard = new Board(25,75); // Creates a gameboard with the dimensions x = 25 y = 75.
