@@ -74,7 +74,7 @@ namespace Game_of_Life
             int miliseconds = 0;
             if (userChoice.ToLower() == "r")
             {
-                return 400;
+                return 100;
             }
             else
             {
