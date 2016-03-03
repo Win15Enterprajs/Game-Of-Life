@@ -15,21 +15,21 @@ namespace Game_of_Life
             Console.SetWindowSize(76, 27);
             Console.SetBufferSize(76, 27);
 
-            Board gameBoard = new Board(25,75);
-            Cells Game = new Cells();
+            Board gameBoard = new Board(25,75); // Creates a gameboard with the dimensions x = 25 y = 75.
+            Cells Game = new Cells(); // Makes an instances of the cell class which manipulates the individual cells on the gameboard.
             
-            gameBoard.addRandomValues(gameBoard.GameBoard);
+            gameBoard.addRandomValues(gameBoard.GameBoard); // Adds random live and dead cells to the gameBoard
             
-            Menue.Intro();
-            gameBoard.printGameBoard(gameBoard.GameBoard);
+            Menue.Intro(); // Prints a title screen.
+            gameBoard.printGameBoard(gameBoard.GameBoard); // Prints the gameBoard in the console.
             Console.WriteLine("\r\nThis is the seed. Press any key to start game of life...");
             Console.ReadKey(true);
 
             do
             {
                 Console.Clear();
-                gameBoard.GameBoard = Game.ManipulateCells(gameBoard.GameBoard);
-                gameBoard.printGameBoard(gameBoard.GameBoard); 
+                gameBoard.GameBoard = Game.ManipulateCells(gameBoard); // Manipulates the values according to the rules of game of life.
+                gameBoard.printGameBoard(gameBoard.GameBoard); // Prints the gameboard in the console.
                 Console.ReadLine();
 
             } while (true);

@@ -161,6 +161,7 @@ namespace Game_of_Life
         /// <returns></returns>
         public int[,] addRandomValues(int[,] arrayInput)
         {
+            
             int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
             int[,] tempArray = arrayInput;
             Random rnd = new Random();
