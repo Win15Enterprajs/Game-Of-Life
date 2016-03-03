@@ -63,7 +63,7 @@ namespace Game_of_Life
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = (int)CellState.aboutToDie;
+                        tempArray[i, j] = (int)CellState.aboutToBeReborn;
                     }
                 }
             }
