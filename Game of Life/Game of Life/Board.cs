@@ -9,6 +9,21 @@ namespace Game_of_Life
     class Board
     {
         /// <summary>
+        /// A class that handles the gameboard.
+        /// </summary>
+        public int[,] GameBoard { get; set; }
+        
+        /// <summary>
+        /// Constructor that creates the gameboard.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public Board (int x, int y)
+        {
+            this.GameBoard = new int[x, y];
+        }
+        public Board() { } // empty contructor
+        /// <summary>
         /// Counts the neighbours which have the value of 1 surrounding the x and y coordinates.
         /// </summary>
         /// <param name="x">Coordinate of x-axis.</param>
@@ -78,10 +93,16 @@ namespace Game_of_Life
 
             return amountOfNeighbours;
         }
-        public void printArr(int[,] array)
+
+        /// <summary>
+        /// This takes a gameboard in the form of a 2D int array
+        /// and prints it in the console.
+        /// </summary>
+        /// <param name="array">2D int array gameboard</param>
+        public void printGameBoard(int[,] array)
         {
-            char asciiAlive = '█';
             char asciiDead = ' ';
+            char asciiAlive = '█';
             char asciiAboutToDie = '░';
             char asciiAboutToBeReborn = '▒';
             StringBuilder sb = new StringBuilder();
@@ -89,7 +110,7 @@ namespace Game_of_Life
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i, j] == (int)Cells.CellState.Alive) // 3 Alive
+                    if (array[i, j] == (int)Cells.CellState.Alive)
                     {
 
                         if (j == array.GetLength(1) - 1)
@@ -101,7 +122,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAlive);
                         }
                     }
-                    else if (array[i, j] == (int)Cells.CellState.aboutToBeReborn) // 2 About to be reborn.
+                    else if (array[i, j] == (int)Cells.CellState.aboutToBeReborn)
                     {
                         if (j == array.GetLength(1) - 1)
                         {
@@ -112,7 +133,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAboutToBeReborn);
                         }
                     }
-                    else if (array[i, j] == (int)Cells.CellState.aboutToDie) // 1 About to die.
+                    else if (array[i, j] == (int)Cells.CellState.aboutToDie)
                     {
                         if (j == array.GetLength(1) - 1)
                         {
@@ -123,7 +144,7 @@ namespace Game_of_Life
                             sb.AppendFormat("{0}", asciiAboutToDie);
                         }
                     }
-                    else if (array[i, j] == 0 && j == array.GetLength(1) - 1) // 0 Dead
+                    else if (array[i, j] == 0 && j == array.GetLength(1) - 1)
                     {
                         sb.AppendFormat("{0}\n", asciiDead);
                         break;
@@ -136,17 +157,7 @@ namespace Game_of_Life
             }
             Console.WriteLine(sb.ToString());
         }
-        public int[,] addRandomValues(int[,] arrayInput)
-        {
-            int amountToAdd = (arrayInput.GetLength(0) * arrayInput.GetLength(1)) / 4;
-            int[,] tempArray = arrayInput;
-            Random rnd = new Random();
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                tempArray[rnd.Next(0 , arrayInput.GetLength(0)),rnd.Next(0, arrayInput.GetLength(1))] = rnd.Next(0, 2);
-            }
-            return tempArray;
-        }
+       
         public void PrintTheArray(int[,] array) //For visual testing purposes.
         {
             for (int i = 0; i < array.GetLength(0); i++)

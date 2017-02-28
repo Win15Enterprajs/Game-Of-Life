@@ -33,17 +33,17 @@ namespace Game_of_Life
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        public int[,] ManipulateCells(int[,] array)
+        public int[,] ManipulateCells(Board gameBoard)
         {
-            var board = new Board();
-            var tempArray = MakeTheTempArray(array);
+            var array = gameBoard.GameBoard;
+            var tempArray = MakeTheTempArray(gameBoard.GameBoard);
             int numberOfNeighbours = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    numberOfNeighbours = board.CountNeighbour(i, j, array);
+                    numberOfNeighbours = gameBoard.CountNeighbour(i, j, array);
                     if (array[i,j] == (int)CellState.aboutToDie)
                     {
                         tempArray[i, j] = 0;
@@ -52,25 +52,39 @@ namespace Game_of_Life
                     {
                         tempArray[i, j] = 1;
                     } 
-                    else if (array[i, j] == 1)
+                    else if (array[i, j] == (int)CellState.Alive)
                     {
-                        //  if (board.CountNeighbour(i,j,array) != 2 || board.CountNeighbour(i, j, array) != 3)
                         if (numberOfNeighbours < 2 || numberOfNeighbours > 3)
                         {
-                            tempArray[i, j] = 2; //=(int)CellState.aboutToDie;
+                            tempArray[i, j] = (int)CellState.aboutToDie;
                         }
 
                         
                     }
                     else if (numberOfNeighbours == 3)
                     {
-                        tempArray[i, j] = 3; //=(int)CellState.aboutToBeReborn;
+                        tempArray[i, j] = (int)CellState.aboutToBeReborn;
                     }
                 }
             }
 
             return tempArray;
         }
+        public int[,] addRandomValuesTo(Board gameBoard)
+        {
+
+            int amountToAdd = (gameBoard.GameBoard.GetLength(0) * gameBoard.GameBoard.GetLength(1)) / 4;
+            int[,] tempArray = gameBoard.GameBoard;
+            Random rnd = new Random();
+            for (int i = 0; i < amountToAdd; i++)
+            {
+                tempArray[rnd.Next(0, gameBoard.GameBoard.GetLength(0)), rnd.Next(0, gameBoard.GameBoard.GetLength(1))] = rnd.Next(0, 2);
+            }
+            return tempArray;
+        }
+
+
+
         /// <summary>
         /// Offers the user an option to automate the cellupdates according to a pre-set or use decided pace
         /// </summary>
@@ -94,6 +108,6 @@ namespace Game_of_Life
                 return miliseconds;
             }
             
-        }
+        } // not Implemented
     }
 }

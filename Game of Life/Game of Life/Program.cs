@@ -12,30 +12,28 @@ namespace Game_of_Life
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
-            int[,] testArray = new int[20, 75];
-            Board test = new Board();
-            Cells Game = new Cells();
+            Console.SetWindowSize(76, 28);
+            Console.SetBufferSize(76, 28);
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
+            Board gameBoard = new Board(25,75); // Creates a gameboard with the dimensions x = 25 y = 75.
+            Cells Game = new Cells(); // Makes an instances of the cell class which manipulates the individual cells on the gameboard.
             
-            test.addRandomValues(testArray);
-            //testArray[0, 0] = 1;
-            //testArray[0, 1] = 1;
-            //testArray[0, 2] = 1;
-            //test.PrintTheArray(testArray);
-            Menue.Intro();
-            Console.WriteLine("This is the seed.");
-            test.printArr(testArray);
-            Console.WriteLine("Press any key to start game of life...");
+            Game.addRandomValuesTo(gameBoard); // Adds random live and dead cells to the gameBoard
+            
+            Menue.Intro(); // Prints a title screen.
+            gameBoard.printGameBoard(gameBoard.GameBoard); // Prints the gameBoard in the console.
+            Console.WriteLine("\r\nThis is the seed. Press any key to start game of life...");
             Console.ReadKey(true);
+
             do
             {
                 Console.Clear();
-                testArray = Game.ManipulateCells(testArray);
-                //test.PrintTheArray(testArray);
-                test.printArr(testArray);
+                gameBoard.GameBoard = Game.ManipulateCells(gameBoard); // Manipulates the values according to the rules of game of life.
+                gameBoard.printGameBoard(gameBoard.GameBoard); // Prints the gameboard in the console.
                 Console.ReadLine();
 
             } while (true);
-            // random comment here smilyface
 
         }
     }
