@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Game_of_Life
+namespace GameOfLifeWF
 {
     class Cells
     {
@@ -82,7 +82,7 @@ namespace Game_of_Life
             int miliseconds = 0;
             if (userChoice.ToLower() == "r")
             {
-                return 100;
+                return 400;
             }
             else
             {

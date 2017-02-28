@@ -11,13 +11,11 @@ namespace Game_of_Life
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write("He");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("j");
+            Console.CursorVisible = false;
             int[,] testArray = new int[20, 75];
             Board test = new Board();
             Cells Game = new Cells();
+            
             test.addRandomValues(testArray);
             //testArray[0, 0] = 1;
             //testArray[0, 1] = 1;
@@ -34,7 +32,7 @@ namespace Game_of_Life
                 testArray = Game.ManipulateCells(testArray);
                 //test.PrintTheArray(testArray);
                 test.printArr(testArray);
-                Thread.Sleep(150);
+                Console.ReadLine();
 
             } while (true);
             // random comment here smilyface
